@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:memo_game/domain/entity/shared_models/game.dart';
+import 'package:shared_models/shared_models.dart';
 
 /// game service interface
 abstract class GameServiceI {

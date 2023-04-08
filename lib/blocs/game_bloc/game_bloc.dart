@@ -3,10 +3,8 @@ import 'dart:async';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:memo_game/domain/entity/shared_models/field_state.dart';
-import 'package:memo_game/domain/entity/shared_models/game.dart';
-import 'package:memo_game/domain/entity/shared_models/user.dart';
 import 'package:memo_game/domain/services/game_sevice/game_service_i.dart';
+import 'package:shared_models/shared_models.dart';
 
 part 'game_event.dart';
 part 'game_state.dart';

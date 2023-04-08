@@ -37,6 +37,8 @@ dependencies:
   intl: ^0.18.0
   json_annotation: ^4.8.0
   json_serializable: ^6.6.1
+  shared_models:
+    path: ../memo_back/memo_backend/packages/shared_models/
 
 dev_dependencies:
   bloc_test: ^9.1.1
