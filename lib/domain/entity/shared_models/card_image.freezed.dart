@@ -20,7 +20,10 @@ CardImage _$CardImageFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$CardImage {
+  /// image id
   int get id => throw _privateConstructorUsedError;
+
+  /// image source url
   String get imageUrl => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -111,8 +114,11 @@ class _$_CardImage extends _CardImage with DiagnosticableTreeMixin {
   factory _$_CardImage.fromJson(Map<String, dynamic> json) =>
       _$$_CardImageFromJson(json);
 
+  /// image id
   @override
   final int id;
+
+  /// image source url
   @override
   final String imageUrl;
 
@@ -167,8 +173,12 @@ abstract class _CardImage extends CardImage {
       _$_CardImage.fromJson;
 
   @override
+
+  /// image id
   int get id;
   @override
+
+  /// image source url
   String get imageUrl;
   @override
   @JsonKey(ignore: true)

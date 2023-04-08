@@ -2,8 +2,8 @@
 
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:memo_game/domain/entity/card_image.dart';
-import 'package:memo_game/domain/entity/field_state.dart';
+import 'package:memo_game/domain/entity/shared_models/card_image.dart';
+import 'package:memo_game/domain/entity/shared_models/field_state.dart';
 part 'game_field.freezed.dart';
 part 'game_field.g.dart';
 

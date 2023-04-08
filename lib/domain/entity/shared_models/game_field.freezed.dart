@@ -20,9 +20,16 @@ GameField _$GameFieldFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$GameField {
+  /// field unique id
   int get id => throw _privateConstructorUsedError;
+
+  /// field value. two fields with one value makes pair
   String get value => throw _privateConstructorUsedError;
+
+  /// field card from image
   CardImage get image => throw _privateConstructorUsedError;
+
+  /// current field state
   FieldState get state => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -151,12 +158,19 @@ class _$_GameField extends _GameField with DiagnosticableTreeMixin {
   factory _$_GameField.fromJson(Map<String, dynamic> json) =>
       _$$_GameFieldFromJson(json);
 
+  /// field unique id
   @override
   final int id;
+
+  /// field value. two fields with one value makes pair
   @override
   final String value;
+
+  /// field card from image
   @override
   final CardImage image;
+
+  /// current field state
   @override
   @JsonKey()
   final FieldState state;
@@ -218,12 +232,20 @@ abstract class _GameField extends GameField {
       _$_GameField.fromJson;
 
   @override
+
+  /// field unique id
   int get id;
   @override
+
+  /// field value. two fields with one value makes pair
   String get value;
   @override
+
+  /// field card from image
   CardImage get image;
   @override
+
+  /// current field state
   FieldState get state;
   @override
   @JsonKey(ignore: true)

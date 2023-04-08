@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:memo_game/ui/widgets/card_widget.dart';
 
 class TestScreen extends StatefulWidget {
-  TestScreen({Key? key}) : super(key: key);
+  const TestScreen({super.key});
 
   @override
   State<TestScreen> createState() => _TestScreenState();

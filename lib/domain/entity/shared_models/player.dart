@@ -2,7 +2,7 @@
 
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:memo_game/domain/entity/user.dart';
+import 'package:memo_game/domain/entity/shared_models/user.dart';
 part 'player.freezed.dart';
 part 'player.g.dart';
 

@@ -20,9 +20,19 @@ Game _$GameFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Game {
+  /// game id
   int get id => throw _privateConstructorUsedError;
+
+  /// current player which turn it is
+  Player get currentPlayer => throw _privateConstructorUsedError;
+
+  /// players in game
   List<Player> get players => throw _privateConstructorUsedError;
+
+  /// image for card backs
   CardImage get cardBackImage => throw _privateConstructorUsedError;
+
+  /// list of fields with cards
   List<GameField> get cards => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -37,10 +47,12 @@ abstract class $GameCopyWith<$Res> {
   @useResult
   $Res call(
       {int id,
+      Player currentPlayer,
       List<Player> players,
       CardImage cardBackImage,
       List<GameField> cards});
 
+  $PlayerCopyWith<$Res> get currentPlayer;
   $CardImageCopyWith<$Res> get cardBackImage;
 }
 
@@ -58,6 +70,7 @@ class _$GameCopyWithImpl<$Res, $Val extends Game>
   @override
   $Res call({
     Object? id = null,
+    Object? currentPlayer = null,
     Object? players = null,
     Object? cardBackImage = null,
     Object? cards = null,
@@ -67,6 +80,10 @@ class _$GameCopyWithImpl<$Res, $Val extends Game>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
+      currentPlayer: null == currentPlayer
+          ? _value.currentPlayer
+          : currentPlayer // ignore: cast_nullable_to_non_nullable
+              as Player,
       players: null == players
           ? _value.players
           : players // ignore: cast_nullable_to_non_nullable
@@ -80,6 +97,14 @@ class _$GameCopyWithImpl<$Res, $Val extends Game>
           : cards // ignore: cast_nullable_to_non_nullable
               as List<GameField>,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $PlayerCopyWith<$Res> get currentPlayer {
+    return $PlayerCopyWith<$Res>(_value.currentPlayer, (value) {
+      return _then(_value.copyWith(currentPlayer: value) as $Val);
+    });
   }
 
   @override
@@ -99,10 +124,13 @@ abstract class _$$_GameCopyWith<$Res> implements $GameCopyWith<$Res> {
   @useResult
   $Res call(
       {int id,
+      Player currentPlayer,
       List<Player> players,
       CardImage cardBackImage,
       List<GameField> cards});
 
+  @override
+  $PlayerCopyWith<$Res> get currentPlayer;
   @override
   $CardImageCopyWith<$Res> get cardBackImage;
 }
@@ -117,6 +145,7 @@ class __$$_GameCopyWithImpl<$Res> extends _$GameCopyWithImpl<$Res, _$_Game>
   @override
   $Res call({
     Object? id = null,
+    Object? currentPlayer = null,
     Object? players = null,
     Object? cardBackImage = null,
     Object? cards = null,
@@ -126,6 +155,10 @@ class __$$_GameCopyWithImpl<$Res> extends _$GameCopyWithImpl<$Res, _$_Game>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
+      currentPlayer: null == currentPlayer
+          ? _value.currentPlayer
+          : currentPlayer // ignore: cast_nullable_to_non_nullable
+              as Player,
       players: null == players
           ? _value._players
           : players // ignore: cast_nullable_to_non_nullable
@@ -147,6 +180,7 @@ class __$$_GameCopyWithImpl<$Res> extends _$GameCopyWithImpl<$Res, _$_Game>
 class _$_Game extends _Game with DiagnosticableTreeMixin {
   const _$_Game(
       {required this.id,
+      required this.currentPlayer,
       required final List<Player> players,
       required this.cardBackImage,
       final List<GameField> cards = const []})
@@ -156,9 +190,18 @@ class _$_Game extends _Game with DiagnosticableTreeMixin {
 
   factory _$_Game.fromJson(Map<String, dynamic> json) => _$$_GameFromJson(json);
 
+  /// game id
   @override
   final int id;
+
+  /// current player which turn it is
+  @override
+  final Player currentPlayer;
+
+  /// players in game
   final List<Player> _players;
+
+  /// players in game
   @override
   List<Player> get players {
     if (_players is EqualUnmodifiableListView) return _players;
@@ -166,9 +209,14 @@ class _$_Game extends _Game with DiagnosticableTreeMixin {
     return EqualUnmodifiableListView(_players);
   }
 
+  /// image for card backs
   @override
   final CardImage cardBackImage;
+
+  /// list of fields with cards
   final List<GameField> _cards;
+
+  /// list of fields with cards
   @override
   @JsonKey()
   List<GameField> get cards {
@@ -179,7 +227,7 @@ class _$_Game extends _Game with DiagnosticableTreeMixin {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'Game(id: $id, players: $players, cardBackImage: $cardBackImage, cards: $cards)';
+    return 'Game(id: $id, currentPlayer: $currentPlayer, players: $players, cardBackImage: $cardBackImage, cards: $cards)';
   }
 
   @override
@@ -188,6 +236,7 @@ class _$_Game extends _Game with DiagnosticableTreeMixin {
     properties
       ..add(DiagnosticsProperty('type', 'Game'))
       ..add(DiagnosticsProperty('id', id))
+      ..add(DiagnosticsProperty('currentPlayer', currentPlayer))
       ..add(DiagnosticsProperty('players', players))
       ..add(DiagnosticsProperty('cardBackImage', cardBackImage))
       ..add(DiagnosticsProperty('cards', cards));
@@ -199,6 +248,8 @@ class _$_Game extends _Game with DiagnosticableTreeMixin {
         (other.runtimeType == runtimeType &&
             other is _$_Game &&
             (identical(other.id, id) || other.id == id) &&
+            (identical(other.currentPlayer, currentPlayer) ||
+                other.currentPlayer == currentPlayer) &&
             const DeepCollectionEquality().equals(other._players, _players) &&
             (identical(other.cardBackImage, cardBackImage) ||
                 other.cardBackImage == cardBackImage) &&
@@ -210,6 +261,7 @@ class _$_Game extends _Game with DiagnosticableTreeMixin {
   int get hashCode => Object.hash(
       runtimeType,
       id,
+      currentPlayer,
       const DeepCollectionEquality().hash(_players),
       cardBackImage,
       const DeepCollectionEquality().hash(_cards));
@@ -231,6 +283,7 @@ class _$_Game extends _Game with DiagnosticableTreeMixin {
 abstract class _Game extends Game {
   const factory _Game(
       {required final int id,
+      required final Player currentPlayer,
       required final List<Player> players,
       required final CardImage cardBackImage,
       final List<GameField> cards}) = _$_Game;
@@ -239,12 +292,24 @@ abstract class _Game extends Game {
   factory _Game.fromJson(Map<String, dynamic> json) = _$_Game.fromJson;
 
   @override
+
+  /// game id
   int get id;
   @override
+
+  /// current player which turn it is
+  Player get currentPlayer;
+  @override
+
+  /// players in game
   List<Player> get players;
   @override
+
+  /// image for card backs
   CardImage get cardBackImage;
   @override
+
+  /// list of fields with cards
   List<GameField> get cards;
   @override
   @JsonKey(ignore: true)

@@ -20,7 +20,10 @@ User _$UserFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$User {
+  /// unique user id
   int get id => throw _privateConstructorUsedError;
+
+  /// user name
   String get name => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -106,8 +109,11 @@ class _$_User extends _User with DiagnosticableTreeMixin {
 
   factory _$_User.fromJson(Map<String, dynamic> json) => _$$_UserFromJson(json);
 
+  /// unique user id
   @override
   final int id;
+
+  /// user name
   @override
   final String name;
 
@@ -160,8 +166,12 @@ abstract class _User extends User {
   factory _User.fromJson(Map<String, dynamic> json) = _$_User.fromJson;
 
   @override
+
+  /// unique user id
   int get id;
   @override
+
+  /// user name
   String get name;
   @override
   @JsonKey(ignore: true)

@@ -20,8 +20,13 @@ Player _$PlayerFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Player {
+  /// player id
   int get id => throw _privateConstructorUsedError;
+
+  /// this player User
   User get user => throw _privateConstructorUsedError;
+
+  /// player score in game. default value 0
   int get score => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -133,10 +138,15 @@ class _$_Player extends _Player with DiagnosticableTreeMixin {
   factory _$_Player.fromJson(Map<String, dynamic> json) =>
       _$$_PlayerFromJson(json);
 
+  /// player id
   @override
   final int id;
+
+  /// this player User
   @override
   final User user;
+
+  /// player score in game. default value 0
   @override
   @JsonKey()
   final int score;
@@ -194,10 +204,16 @@ abstract class _Player extends Player {
   factory _Player.fromJson(Map<String, dynamic> json) = _$_Player.fromJson;
 
   @override
+
+  /// player id
   int get id;
   @override
+
+  /// this player User
   User get user;
   @override
+
+  /// player score in game. default value 0
   int get score;
   @override
   @JsonKey(ignore: true)
